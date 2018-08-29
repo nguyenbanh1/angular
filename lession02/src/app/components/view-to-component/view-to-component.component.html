@@ -1,0 +1,49 @@
+<h2>Nguyên chào mừng tất cả mọi người</h2>
+<h2>{{title}}</h2>
+<hr>
+<button type="button" class="btn btn-primary" (click)="onClickMe($event)">
+	Click me !!!
+</button>
+<button 
+	type="button" 
+	class="btn btn-primary" 
+	(dblclick)="onDBClickMe($event)">
+	DB Click me !!!
+</button>
+
+<h1>count : {{count}}</h1>
+<button type="button" 
+	class="btn btn-warning"
+	(click)="onIncreament()"
+	>Tăng
+</button>
+<button type="button" 
+	class="btn btn-warning"
+	(click)="ondecreament()"
+	>Giảm
+</button>
+<hr/>
+
+
+<h3>{{username}}</h3>
+<div class="form-group">
+	<label for="">Username :</label>
+	<input 	type="text" 
+			class="form-control"
+			placeholder="Input field"
+			(keyup) = "onKeyUp($event)"
+	>
+</div>
+
+
+<h3>{{name}}</h3>
+<div class="form-group">
+	<label for="">Username :</label>
+	<input 	type="text" 
+			class="form-control"
+			placeholder="Input field"
+			(keyup.enter) = "onKeyUpEnter($event)"
+	>
+</div>
+	
+			

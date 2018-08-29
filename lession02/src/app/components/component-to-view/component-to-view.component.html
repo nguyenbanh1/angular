@@ -1,0 +1,68 @@
+<p>
+  component-to-view works! Tăng Khánh Nguyên
+</p>
+<h3>
+	Name 	: {{user.name}}<br>
+	Age  	: {{user.age}}<br>
+	Married : {{user.isMarried == true ? "Đã kết hôn" : "Độc thân"}} 
+</h3>
+
+<h3>method</h3>
+Name : {{showInform()}}
+<img src="{{imgLink}}" widht = "200">
+<a href="{{ link }}">
+	{{ textLink}}
+</a>
+
+<hr>
+<h1>Property Binding</h1>
+<img [src] = "imgLink" [width] = "imgWidth" [alt] = "'cuộc chiến của naruto và sasuke'">
+Username <input type="text" name="username" class="form-control" [value] = "name">
+
+<button type="button" class="btn btn-primary" [disabled] = "isValid">Đằng Nhập</button>
+
+<hr>
+<table width = "500" border="2px red solid" [attr.width] = "table_width" [class.table-bordered] = "isBorder">
+	<tr>
+		<td>ID</td>
+		<td>Họ Tên</td>
+		<td>SĐT</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>ABC</td>
+		<td>123456</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>ABC</td>
+		<td>123456</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>ABC</td>
+		<td>123456</td>
+	</tr>
+	
+</table>
+
+<span 
+	class="label" 
+	[class.label-danger]="isChecked === 1"
+	[class.label-success]="isChecked != 1"
+	>Label
+</span>
+
+
+
+<hr>
+<button type="button" class="btn btn-danger">button</button>
+
+
+<div 
+	[style.background-color] = "isSpecial ? 'red' : 'yellow'" 
+	[style.color] = "'white'"
+	[style.font-size.px] = "size"
+
+	>Lập trình angular 4
+</div>

@@ -1,0 +1,198 @@
+<h1 style = "text-align: center;color: red;">Begin Http</h1>
+
+<div class="container" [style.margin-top.px] = "50">
+		
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Completed</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let item of todos">
+						<td>{{ item.id }}</td>
+						<td>{{ item.title }}</td>
+						<td>{{ item.completed ? 'completed' : 'InProress' }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr>
+		<form>
+			<legend>add todo</legend>
+
+			<div class="form-group">
+				<label for="">Title</label>
+				<input type="text" class="form-control" placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+			</div>
+
+			<select  class="form-control" [(ngModel)]="completed" [ngModelOptions]="{standalone: true}">
+				<option value="true">Completed</option>
+				<option value = "false">InProgress</option>
+			</select>
+			
+			<button type="submit" class="btn btn-primary" (click)= "onAddTodo()">Add</button>
+
+			<button style = "margin-left: 50px;"class="btn btn-primary" (click)= "getAllStaff()">getAuthentication</button>
+		</form>
+		<hr>
+
+		<button (click) = "Login()">Login</button>
+		<button (click) = "getUserName()">getUsername</button>
+		<button (click) = "test()">Test</button>
+
+		<form >
+			<legend>Form title</legend>
+		
+			<div class="form-group">
+				<input type="text" class="form-control" id="" placeholder="Input field">
+			</div>
+		
+			
+		
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>App component</h1>
+<div class="container" >
+
+	<div class="row">
+		
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					Chào mừng đến bài học component to view
+				</div>
+				<div class="panel-body">
+					<component-to-view></component-to-view>
+				</div>
+				<div class="panel-footer">
+					Kết thúc
+				</div>
+
+			</div>
+		</div>
+		
+		
+
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					Chào mừng dến bài học view to component
+				</div>
+				<div class="panel-body">
+					<view-to-component></view-to-component>
+				</div>
+				<div class="panel-footer">
+					Kết thúc
+				</div>
+
+			</div>
+		
+		</div>
+		
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					Chào mừng dến bài học Two-Way binding
+				</div>
+				<div class="panel-body">
+					<app-two-way-binding></app-two-way-binding>
+				</div>
+				<div class="panel-footer">
+					Kết thúc
+				</div>
+
+			</div>
+		
+		</div>
+
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					Chào mừng dến bài học Directives Structural
+				</div>
+				<div class="panel-body">
+					<app-directives-tructural></app-directives-tructural>
+				</div>
+				<div class="panel-footer">
+					Kết thúc
+				</div>
+
+			</div>
+		
+		</div>
+
+
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					Chào mừng dến bài học Component và Template (Display Data)
+				</div>
+				<div class="panel-body">
+					<app-com-temp-displaying-data></app-com-temp-displaying-data>
+				</div>
+				<div class="panel-footer">
+					Kết thúc
+				</div>
+
+			</div>
+		
+		</div>
+
+
+
+	</div>
+	
+
+</div> -->

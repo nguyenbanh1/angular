@@ -1,0 +1,112 @@
+
+<h1>Chủ đề về *ngIf </h1>
+<h1 *ngIf="isShow">Họ tên: {{userName}}</h1>
+
+<button type="button" class="btn btn-warning" (click) = "onToggle()">Toggle</button>
+<hr/>
+
+
+<div class="radio">
+	
+	<label>
+		<input type="radio" name="rdCheck" (click)= "Check(true)">
+		Hợp lệ
+	</label>
+
+
+	<label>
+		<input type="radio" name="rdCheck" (click) = "Check(false)">
+		Không hợp lệ
+	</label>
+
+</div>
+
+<h2 *ngIf="isChecked; else elseBlock">hợp lệ</h2>
+
+<ng-template #elseBlock>
+	<h2>không hợp lệ</h2>
+</ng-template>
+<hr/>
+
+{{age}}
+<div class="form-group">
+		<label >Tuổi : </label>
+		<input type="text" class="form-control" [(ngModel)] = "age">
+</div>
+
+
+
+<!--Giai phap 1 : <h3 *ngIf="age > 18;else elseNotEnough">
+	Đủ tuổi
+</h3>
+<ng-template #elseNotEnough>
+	<h3>Chưa đủ tuổi</h3>
+</ng-template> -->
+
+<!-- Giai phap 2-->
+<ng-container *ngIf="age > 18;else NotEnough">
+	<h3>Đủ tuổi</h3>
+</ng-container>
+<ng-template #NotEnough>
+	<h3>Chưa đủ tuổi</h3>
+</ng-template>
+
+<hr/>
+<h1>Chủ đề về *ngFor </h1>
+
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let name of names;
+								let i = index let f= first" 
+	>{{name}} : {{i}} -> {{f}}</li>
+
+</ul>
+
+<hr/>
+<h1>Chủ đề về *ngSwitch = "action"</h1>
+<ul class="list-group">
+	<li class="list-group-item"
+		*ngFor = "let employee of employees;let j = index let i = first"
+		[ngSwitch] = "employee.nation"
+
+	>	
+		<span *ngSwitchCase = "'VN'" class = "text-danger">
+			{{employee.name}} - {{employee.nation}} : {{j + 1}}, {{i}}
+		</span>
+		<span *ngSwitchCase = "'USA'" class = "text-primary">
+			{{employee.name}} - {{employee.nation}} : {{j + 1}}, {{i}}
+		</span>
+		
+		<span *ngSwitchDefault>
+			{{employee.name}}  -  {{employee.nation}} :{{j + 1}}, {{i}}
+		</span>
+	</li>
+</ul>
+
+
+
+<!-- Đây là class binding-->
+<hr/>
+<h1 [class.pd-10] = "true" [class.cl-red] = "true" [class.border-blue] = "true">
+	Chủ đề về [ngClass]
+</h1>
+
+<!-- Đây là attribute directive -->
+<h1 [ngClass] = "['pd-10','cl-red','border-blue']"> Slides </h1>
+<h1 [ngClass] = "{ 'border-blue' : isBorder }"> Slides </h1>
+
+
+<h1 [ngStyle] = "{
+	
+	'border' : isSpecial === true ? 'solid 2px blue' : 'solid 3px red',
+	'padding.px' : '10',
+	'color' : 'red'
+
+				}"
+>
+	Ví dụ về NgStyle 
+</h1>
+
+
+
+
+
